@@ -12,6 +12,9 @@ def emotion_detect():
     fear = response["fear"]
     joy = response["joy"]
     sadness = response["sadness"]
+    
+    if dominant_emotion is None:
+        return "Invalid text! Please try again!"
 
     return (
         f"For the given statement, the system response is 'anger': {anger}, "
@@ -24,4 +27,4 @@ def render_index_page():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5001)
